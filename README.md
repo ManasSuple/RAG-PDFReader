@@ -1,5 +1,4 @@
-<aside>
-
+---
 # 🧹 RAG Backend + Streamlit App
 
 This project allows you to **chat with your PDF documents** using Retrieval-Augmented Generation (RAG), powered by **Google Gemini API**, **Langchain**, and **Streamlit**.
@@ -191,5 +190,3 @@ For any questions or feedback, feel free to reach out!
 This project is licensed under the MIT License.
 
 ---
-
-</aside>
