@@ -6,3 +6,4 @@ pypdf
 pdfplumber
 chromadb
 sentence-transformers
+faiss-cpu
