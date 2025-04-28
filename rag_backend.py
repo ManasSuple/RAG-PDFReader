@@ -28,19 +28,27 @@ def embed_documents(text_chunks):
     )
     return embedding_model, text_chunks
 
-def store_embeddings(embedding_model, text_chunks):
-    vectorstore = Chroma.from_texts(
-        texts=text_chunks,
-        embedding=embedding_model,
-        # persist_directory="./chroma_db"
-        vectorstore = Chroma.from_texts(
-    texts=text_chunks,
-    embedding=embedding_model,
-    persist_directory="/tmp/chroma_db"
-)
+# def store_embeddings(embedding_model, text_chunks):
+#     vectorstore = Chroma.from_texts(
+#         texts=text_chunks,
+#         embedding=embedding_model,
+#---------------------------------------
+#         # persist_directory="./chroma_db"
+# --------------------------------------
+#         vectorstore = Chroma.from_texts(
+#     texts=text_chunks,
+#     embedding=embedding_model,
+#     persist_directory="/tmp/chroma_db"
+# )
 
+#     )
+#     vectorstore.persist()
+#     return vectorstore
+def store_embeddings(embedding_model, text_chunks):
+    vectorstore = FAISS.from_texts(
+        texts=text_chunks,
+        embedding=embedding_model
     )
-    vectorstore.persist()
     return vectorstore
 
 def retrieve_relevant_chunks(vectorstore, query, k=3):
